@@ -40,6 +40,21 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+* struct global_variable - opcoode function
+* @file: the opcode
+* @push: handle the opcode
+* @buffer: pointer to opcode
+*/
+typedef struct global_variable
+{
+	FILE *file;
+	int push_arg;
+	char *buffer;
+} global_var;
 
+extern int push;
+extern global_var var_global;
 
+void f_push(stack_t **head, unsigned int count)
 void pall(stack_t **head, unsigned int count);
