@@ -1,22 +1,20 @@
 #include "monty.h"
 /**
-* pall - prints all elements in  the stack
-* @head: pointer to the top node
-* @line_number: number used in bytecode file
-* Return: nothing
-*/
-void pall(stack_t **head, unsigned int line_number)
+ * pall -  prints all the values on the stack, starting from
+ * the top of the stack.
+ * @stack: pointer to the top of the stack
+ * @line_number: the line number of the command being run
+ *
+ * Return: 0
+ */
+void pall(stack_t **stack, unsigned int line_number)
 {
-stack_t *h;
-h  = *stack;
-(void) line_number;
-if (*stack)
-{
-h  = *stack;
-while (h != NULL)
-{
-printf("%d\n", h->n);
-h = h->next;
-}
-}
+	stack_t *p = *stack;
+	(void) line_number;
+
+	while (p != NULL)
+	{
+		fprintf(stderr, "%d\n", p->n);
+		p = p->next;
+	}
 }
