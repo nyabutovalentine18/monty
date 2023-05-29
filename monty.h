@@ -41,7 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 
 extern int ERROR_MANAGE;
-
+int ERROR_MANAGE = 0;
 int excute(stack_t **st, unsigned int line, char *command,
 	   instruction_t instruct[], FILE *monty_file);
 void pall(stack_t **stack, unsigned int line_number);
@@ -53,8 +53,8 @@ void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
-stack_t swap(stack_t **stack, unsigned int line_number);
-stack_t mul(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 
 #endif /*MONTY_H*/
